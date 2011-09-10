@@ -178,7 +178,7 @@ var Analytics = {
 		
 		// call the callback
 		
-		callback.call
+		callback.call();
 		
 		return true;
 	}
