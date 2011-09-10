@@ -32,6 +32,7 @@ var Analytics = {
 		// Get geolocation information
 		Analytics.geolocationDetetion.detect();
 		
+		// call the callback
 		callback.call();
 	
 	},
@@ -64,6 +65,7 @@ var Analytics = {
 		
 		Analytics.changeStatus("finish");
 	
+		// call the callback
 		callback.call();
 	},
 	
@@ -107,7 +109,8 @@ var Analytics = {
 	},
 	
 	osDetection : function(){
-	
+		
+		// get the operating system information
 		var os = navigator.platform;
 		
 		return os;
@@ -167,11 +170,15 @@ var Analytics = {
 		
 	},
 		
-	changeStatus : function(status, callback){
+	changeStatus : function( status, callback ){
 	
 		// change the status of Analytics processing
 		
-		Analytics.status = "status";
+		Analytics.status = status;
+		
+		// call the callback
+		
+		callback.call
 		
 		return true;
 	}
