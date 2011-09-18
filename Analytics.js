@@ -14,6 +14,8 @@ var Analytics = {
 	os : "notDefined", // operating system information
 	geolocationSupport : false, // flag whether the geolocation is supported by the browser or not
 	geolocation : "notDefined", // geolocation position information
+	screenHeight : screen.height,
+	screenWidth : screen.width,
 	
 	onReady : function( callback ){
 	
@@ -74,12 +76,13 @@ var Analytics = {
 		// ---- THIS METHOD WILL GET BROWSER INFORMATION OF A USER ---- //
 		
 		// UserAgent RegExp
-		userAgent : navigator.userAgent,
 		rwebkit : /(webkit)[ \/]([\w.]+)/,
 		rchrome : /(chrome)[ \/]([\w.]+)/,
 		ropera : /(opera)(?:.*version)?[ \/]([\w.]+)/,
 		rmsie : /(msie) ([\w.]+)/,
 		rmozilla : /(mozilla)(?:.*? rv:([\w.]+))?/,
+		
+		userAgent : navigator.userAgent,
 		
 		uaMatch: function( ua ) {
 			
@@ -116,7 +119,7 @@ var Analytics = {
 		return os;
 	
 	},
-	
+		
 	geolocationDetection : {
 		
 		isSupported : function(){
